@@ -88,7 +88,7 @@
     <main id="menu" class="max-w-6xl mx-auto px-4 py-12 flex-grow">
         <div class="text-center mb-10">
             <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestras Paletas Artesanales</h2>
-            <p class="text-gray-600 max-w-xl mx-auto">Explora nuestro menú preparado diariamente. Haz clic en agregar para realizar tu pedido en línea.</p>
+            <p class="text-gray-600 max-w-xl mx-auto">Explora nuestro menú preparado diariamente. Haz clic en agregar para realizar tu pedido vía WhatsApp.</p>
             
             <!-- Category Filters -->
             <div class="flex flex-wrap justify-center gap-2 mt-6">
@@ -135,7 +135,7 @@
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-1">Transferencia / Billetera</h3>
-                    <p class="text-sm text-gray-600">Zelle, Nequi, Daviplata o Transferencia Bancaria Directa.</p>
+                    <p class="text-sm text-gray-600">Transferencia Bancaria Directa u otras billeteras móviles.</p>
                 </div>
 
                 <div class="bg-brand-cream p-6 rounded-2xl border border-orange-100 text-center flex flex-col items-center">
@@ -168,7 +168,7 @@
             <div class="border-t pt-4 space-y-4">
                 <div class="flex justify-between text-xl font-bold">
                     <span>Total:</span>
-                    <span id="cart-total" class="text-brand-pink">$0.00</span>
+                    <span id="cart-total" class="text-brand-pink">C$0.00</span>
                 </div>
 
                 <!-- Payment Form in Checkout -->
@@ -180,8 +180,8 @@
                         <option value="Transferencia / QR">📱 Transferencia Digital / Código QR</option>
                     </select>
 
-                    <button onclick="processOrder()" class="w-full bg-brand-pink text-white font-bold py-3 rounded-xl hover:bg-pink-600 transition shadow-lg">
-                        Confirmar y Pedir
+                    <button onclick="processOrder()" class="w-full bg-green-500 text-white font-bold py-3 rounded-xl hover:bg-green-600 transition shadow-lg flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Pedir por WhatsApp
                     </button>
                 </div>
             </div>
@@ -204,7 +204,7 @@
             <div class="flex gap-4 text-gray-400 text-xl">
                 <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/50587886017" target="_blank" class="hover:text-green-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <p class="text-gray-500 text-xs">&copy; 2026 Saborsito Tropical. Todos los derechos reservados.</p>
         </div>
@@ -218,7 +218,7 @@
                 id: 1,
                 name: 'Maracuyá Rellena de Leche Condensada',
                 category: 'rellenas',
-                price: 3.50,
+                price: 130.00,
                 ingredients: ['Pulpa concentrada de maracuyá natural', 'Leche condensada artesanal', 'Agua de manantial', 'Pizca de azúcar orgánica'],
                 icon: '🥭',
                 color: 'from-amber-200 to-yellow-400',
@@ -228,7 +228,7 @@
                 id: 2,
                 name: 'Fresa Salvaje con Trozos',
                 category: 'agua',
-                price: 2.75,
+                price: 100.00,
                 ingredients: ['Fresas frescas picadas', 'Jugo de fresa natural', 'Jugo de limón natural', 'Azúcar de caña'],
                 icon: '🍓',
                 color: 'from-pink-300 to-rose-500',
@@ -238,7 +238,7 @@
                 id: 3,
                 name: 'Chocolate Belga & Avellana',
                 category: 'crema',
-                price: 3.80,
+                price: 140.00,
                 ingredients: ['Cacao fino de aroma 70%', 'Crema de leche fresca', 'Troqueado de avellanas tostadas', 'Esencia de vainilla'],
                 icon: '🍫',
                 color: 'from-amber-800 to-amber-950',
@@ -248,7 +248,7 @@
                 id: 4,
                 name: 'Mango Biche con Sal y Limón',
                 category: 'agua',
-                price: 2.50,
+                price: 90.00,
                 ingredients: ['Mango verde seleccionado', 'Jugo de limón recién exprimido', 'Sal marina en escamas'],
                 icon: '🥭',
                 color: 'from-lime-200 to-green-400',
@@ -258,7 +258,7 @@
                 id: 5,
                 name: 'Coco Cremoso Artesanal',
                 category: 'crema',
-                price: 3.00,
+                price: 110.00,
                 ingredients: ['Leche de coco natural', 'Coco rallado tostado', 'Crema de leche', 'Canela en rama'],
                 icon: '🥥',
                 color: 'from-stone-100 to-amber-100',
@@ -268,7 +268,7 @@
                 id: 6,
                 name: 'Matcha & Leche de Almendras',
                 category: 'crema',
-                price: 3.90,
+                price: 145.00,
                 ingredients: ['Té matcha ceremonial', 'Leche de almendras orgánica', 'Miel pura de abejas'],
                 icon: '🍵',
                 color: 'from-emerald-200 to-green-500',
@@ -295,7 +295,7 @@
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-bold text-brand-dark">${product.name}</h3>
                             </div>
-                            <div class="text-2xl font-black text-brand-pink mb-4">$${product.price.toFixed(2)}</div>
+                            <div class="text-2xl font-black text-brand-pink mb-4">C$${product.price.toFixed(2)}</div>
                             
                             <!-- Ingredients List -->
                             <div class="bg-brand-cream p-3 rounded-xl border border-orange-100 mb-4">
@@ -372,12 +372,12 @@
                 cartItemsContainer.innerHTML = `<p class="text-gray-500 text-center py-8">Tu carrito está vacío 🍦</p>`;
             } else {
                 cartItemsContainer.innerHTML = cart.map(item => `
-                    <div class="flex items-center justify-between border-b pb-3">
+                        <div class="flex items-center justify-between border-b pb-3">
                         <div class="flex items-center gap-3">
                             <span class="text-2xl">${item.icon}</span>
                             <div>
                                 <h4 class="font-bold text-sm text-gray-800">${item.name}</h4>
-                                <span class="text-xs text-brand-pink font-bold">$${item.price.toFixed(2)} c/u</span>
+                                <span class="text-xs text-brand-pink font-bold">C$${item.price.toFixed(2)} c/u</span>
                             </div>
                         </div>
                         <div class="flex items-center gap-2">
@@ -391,7 +391,7 @@
 
             // Total
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            document.getElementById('cart-total').innerText = `$${total.toFixed(2)}`;
+            document.getElementById('cart-total').innerText = `C$${total.toFixed(2)}`;
         }
 
         function toggleCartModal() {
@@ -408,7 +408,26 @@
             const paymentMethod = document.getElementById('payment-method-select').value;
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-            showToast(`¡Pedido recibido! Total: $${total.toFixed(2)} - Pago: ${paymentMethod}`);
+            // Generar el mensaje para WhatsApp
+            let text = `🍦 *¡Hola Saborsito Tropical! Quiero hacer un pedido:*\n\n`;
+            
+            cart.forEach(item => {
+                text += `🔸 ${item.quantity}x ${item.name} - C$${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+            
+            text += `\n💵 *Total a pagar:* C$${total.toFixed(2)}\n`;
+            text += `💳 *Método de pago:* ${paymentMethod}\n\n`;
+            text += `¡Quedo a la espera de confirmación!`;
+
+            // Número de WhatsApp
+            const whatsappNumber = "50587886017";
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+            
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(url, '_blank');
+
+            // Limpiar el carrito y cerrar modal tras realizar el pedido
+            showToast(`¡Redirigiendo a WhatsApp...`);
             cart = [];
             updateCartUI();
             toggleCartModal();
